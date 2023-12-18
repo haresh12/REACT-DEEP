@@ -1,0 +1,92 @@
+<!--
+    VS CODE USE SOMETHING CALLED EMMET WHICH HELP US TO GENERATE CODE SNIPPET GIVEN THEN EXAMPLE YOU  SEE ENTER
+    html:5 AND IT WILL GENERATE SOME CODE FOR YOU. BASIC SKALETON FOR HTML
+-->
+
+<!-- 
+    NEW THINGS OR WORD THAT I HEARD AND NEED TO GO DEEP INTO THAT.
+
+    1. WHAT IS CDN.
+    2. WHAT IS CROSSORIGIN : WE HAVE THAT IN CDN LINK
+    3. WHY DO WE HAVE TWO CDN FILE LIKE REACT AND REACT-DOM ? (THIS IS BEST I KNOW ANSWER BUT GO DEEP)
+    4. ATTRIBUTES VS PROPS
+-->
+
+<!--THIS IS HOW YOU DO IT WITH HTML-->  
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMESTE REACT WITH HTML</title>
+</head>
+<body>
+      <div id="root">
+        <h2>HELLO WORLD</h2>
+      </div>
+</body>
+</html> -->
+
+<!--THIS IS HOW YOU DO IT WITH VANILLA JS-->  
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMESTE REACT WITH JS</title>
+</head>
+<body>
+     <div id="root">
+          <script>
+            // document.createElement you will get it once you are inside JS script tag
+             const heading = document.createElement('h1')
+             // I CREATED HEADING BUT DID NOT PUT ANY CONTENT INSIDE THAT THATS WHY PRECTICAL IS IMPORTENT
+             heading.innerHTML = 'SOMETHING IS BETTER THEN NOTHING'
+             // NOW HOW TO CONNECT THIS HEADING ELEMENT WITH ROOT MEANS HOW WE CAN PUT INSIDE ROOT
+            const root = document.getElementById('root'); // FIRST GET THE ROOT BY ID
+            root.appendChild(heading); // THEN APPEND HEADING INSIDE THAT ROOT
+          </script>
+     </div>
+</body>
+</html> -->
+
+<!--
+    NOW FIRST WE TRIED WITH HTML AND THEN WE TRIED WITH VANILA JS
+
+    WE NEED TO UNDERSTAND ONE THING IS THAT TILL NOW WE DID NOT ADDED AND LIBRARY OR ANYTHING STILL OUR CODE RUNS
+    BECAUSE BROWSER ARE CAPABLE TO UNDERSTAND ALL THIS DOCUMENT.CREATELEMENT OR ANY OTHER HTML TAG BUT NOW WHEN 
+    WE WILL TRY TO CREATE SAME ABOVE PROGRAM WITH REACT WILL BROWSER UNDERSTAND THIS AND ANSWER IS NO.
+
+    AND THATS THE REASON FIRST WE NEED TO INJECT REACT INTO OUR PROJECT NOW THERE ARE FEW WAYS WE CAN DO IT LIKE.
+
+    1. WITH CDN LINK 
+    2. THROUGH LIBRARY : (MOST OF TIME WE WILL DO IT WITH THIS ONLY BUT ITS GOOD TO UNDERSTAND WHY AND WHY NOT TO USE
+    CDN LINK)
+    3. DOES THE ORDER OF SCRIPT MATTERS LIKE SUPPOSE WE HAVE SCRIPT OF ./APP.JS FIRST AND THEN WE HAVE REACT AND REACT DOM SCRIPT
+       WILL IT WORK SIMPLE ANSWER NO BECAUSE IN ./APP.JS WE ARE USING REACT AND IN INDEX.HTML REACT YET NOT EVEN LOADING INTO 
+       OUR PROJECT
+-->  
+<!--THIS IS HOW WE CAN DO IT WITH REACT USING CDN LINK FOR NOW-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css"/>
+    <title>NAMESTE REACT WITH REACT</title>
+</head>
+<body>
+    <h1>TOP HEAD WON'T GET REPLECED BECAUSE REACT MAKING CHANGE ONLY IN ROOT</h1>
+    <div id = 'root'>
+        <h1>I WILL BE REPLECED BECAUSE IN APP.JS I HAVE NEW STUFF TO LOAD</h1>
+    </div>
+    <h1>BOTTOM HEAD WON'T GET REPLECED BECAUSE REACT MAKING CHANGE ONLY IN ROOT</h1>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="./App.js"></script>
+</body>
+</html>
