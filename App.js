@@ -1,3 +1,5 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client' // MAKE SURE TO IMORT FROM REACT-DOM/CLIENT
 // this createElement from REACT takes three arguments first one is type of element that you want to 
 // put second one is props and third one is type of content you want to put THIS IS REALLY IMORTENT
 // to understand because we are not going to using this method after this lecture but still we 
